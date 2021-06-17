@@ -15,4 +15,6 @@ RUN apt-get update && \
     update-alternatives --install /usr/bin/ld.lld ld.lld /usr/bin/ld.lld-12 100    && \
     update-alternatives --install /usr/bin/llvm-ar llvm-ar /usr/bin/llvm-ar-12 100 && \
     # Cleanup apt caches
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* && \
+    # Install nightly cargo toolchain
+    rustup toolchain install nightly
