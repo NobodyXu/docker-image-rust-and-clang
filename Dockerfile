@@ -17,4 +17,7 @@ RUN apt-get update && \
     # Cleanup apt caches
     rm -rf /var/lib/apt/lists/* && \
     # Install nightly cargo toolchain
-    rustup toolchain install nightly
+    rustup toolchain install nightly && \
+    # Install miri on the nightly channel (it currently only supports nightly)
+    rustup +nightly component add miri && \
+    cargo +nightly miri setup
