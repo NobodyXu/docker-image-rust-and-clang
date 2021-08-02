@@ -17,5 +17,5 @@ jobs:
         docker_hub_passwd: ${{ secrets.docker_hub_passwd }}
       run: |
         docker login -u nobodyxu -p c4ad26cd-ec1f-4dc8-821a-d38d13d01b8f
-        docker build -t rust-and-clang .
+        docker build -t nobodyxu/rust-and-clang .
         docker push nobodyxu/rust-and-clang:latest
